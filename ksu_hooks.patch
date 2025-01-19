@@ -31,8 +31,8 @@
  	if (IS_ERR(filename))
  		return PTR_ERR(filename);
  
---- ./fs/open.c	2024-12-13 13:43:11.908474700 -0500
-+++ ./fs/open.c	2024-12-13 14:01:43.390658416 -0500
+--- a/fs/open.c	2024-12-13 13:43:11.908474700 -0500
++++ b/fs/open.c	2024-12-13 14:01:43.390658416 -0500
 @@ -340,6 +340,11 @@
  	return ksys_fallocate(fd, mode, offset, len);
  }
@@ -56,8 +56,8 @@
  	if (mode & ~S_IRWXO)	/* where's F_OK, X_OK, W_OK, R_OK? */
  		return -EINVAL;
  
---- ./fs/read_write.c	2024-12-13 13:43:11.935975000 -0500
-+++ ./fs/read_write.c	2024-12-13 14:03:51.804086030 -0500
+--- a/fs/read_write.c	2024-12-13 13:43:11.935975000 -0500
++++ b/fs/read_write.c	2024-12-13 14:03:51.804086030 -0500
 @@ -462,10 +462,19 @@
  }
  EXPORT_SYMBOL_NS(kernel_read, ANDROID_GKI_VFS_EXPORT_ONLY);
@@ -102,8 +102,8 @@
  	if (flags & ~(AT_SYMLINK_NOFOLLOW | AT_NO_AUTOMOUNT | AT_EMPTY_PATH |
  		      AT_STATX_SYNC_TYPE))
  		return -EINVAL;
---- ./drivers/input/input.c	2024-12-13 13:43:06.142527400 -0500
-+++ ./drivers/input/input.c	2024-12-13 14:07:58.211598652 -0500
+--- a/drivers/input/input.c	2024-12-13 13:43:06.142527400 -0500
++++ b/drivers/input/input.c	2024-12-13 14:07:58.211598652 -0500
 @@ -375,6 +375,11 @@
  	return disposition;
  }
