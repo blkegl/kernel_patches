@@ -1,7 +1,7 @@
 From 5144f3f5231bce3ab8a5294a9cc8d8a98630d759 Mon Sep 17 00:00:00 2001
 From: sidex15 <24408329+sidex15@users.noreply.github.com>
 Date: Fri, 17 Jan 2025 15:47:06 +0800
-Subject: [PATCH] KernelSU-Next: Implement SUSFS v1.5.3+ GKI
+Subject: [PATCH] KernelSU: Implement SUSFS v1.5.3+ GKI
 
 ---
  .gitignore               |   3 +
@@ -110,7 +110,7 @@ index 1f3802f6..82f7dd40 100644
 +config KSU_SUSFS_SUS_OVERLAYFS
 +    bool "Enable to automatically spoof kstat and kstatfs for overlayed files/directories"
 +    depends on KSU_SUSFS
-+    default n
++    default y
 +    help
 +      - Automatically spoof the kstat and kstatfs for overlayed files/directories.
 +      - Enable it if you are using legacy KernelSU and dont have auto hide features enabled.
